@@ -451,7 +451,7 @@ if __name__ == "__main__":
     # tf.data.Dataset.save(dataset, traindir)
 
     # create test dataset 
-    Xtest, Ytest = data_reader(TESTdf["trace_name"].values,h5path)
+    Xtest, Ytest = data_reader(TESTdf["trace_name"].values,h5path, augmentation=False)
     ind = np.random.choice(Xtest.shape[0], Xtest.shape[0], replace=False)
     Xtest = Xtest[ind,:,:,:]
     Ytest = Ytest[ind,:]
